@@ -9,7 +9,7 @@ const networks = {
     host: 'http://localhost:8888',
     port: 8888,
     protocol: 'http',
-    monitor: 'https://jungle.eosx.io',
+    monitor: 'https://eos.eosx.io',
     lightapi: 'https://lightapi.eosgeneva.io'
   },
 
@@ -27,7 +27,7 @@ const networks = {
 
   eos: {
     name: 'eos',
-    contract: 'wwweosswapio',
+    contract: 'vdexmainbook',
 
     chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
 
@@ -40,9 +40,9 @@ const networks = {
 }
 
 export default {
-  APP_NAME: 'EOS DEX',
+  APP_NAME: 'VDEX',
   PRICE_SCALE,
   PRICE_DIGITS: PRICE_SCALE.toString().length - 1,
 
-  ...networks[process.env.NETWORK] || networks.local
+  ...networks[process.env.NETWORK] 
 }
