@@ -1,9 +1,8 @@
 <template lang="pug">
-// TODO Make this shit done
 div
   .row
     .col
-      el-alert(title="Amounts does't match unit price!", v-show="wrongPrice" type='info', show-icon :closable="false")
+      el-alert(title="Amounts do not match unit price!", v-show="wrongPrice" type='info', show-icon :closable="false")
         | Please change price or amount.
         a(href="#", @click="wtf").ml-1  WTF ?
   .row.p-2
@@ -28,7 +27,6 @@ div
             span(slot="suffix").mr-1 EOS
 
         el-form-item.mt-2
-          // TODO разработать компонент которой чекает залогинен ли
           el-button(type="success" @click="buy").w-100 Buy {{ market.token.str }}
 
     .col
@@ -36,7 +34,6 @@ div
 
       el-form(ref="form" :rules="rules" label-width="60px")
         el-form-item(label="Price")
-          // FIXME Падает апп когда печатаешь сюда буквы
           el-input(type="number" min="0" step="0.0001" value="0" v-model="price" clearable @change="update")
             span(slot="suffix").mr-1.ml-2 EOS
 
@@ -52,7 +49,6 @@ div
             span(slot="suffix").mr-1 EOS
 
         el-form-item.mt-2
-          // TODO разработать компонент которой чекает залогинен ли
           el-button(type="danger" @click="sell").w-100 Sell {{ market.token.str }}
 </template>
 
@@ -87,7 +83,7 @@ export default {
     async sell() {
       if (!this.$store.state.chain.scatterConnected) return this.$notify({
         title: 'Authorization',
-        message: 'Pleace connect Scatter',
+        message: 'Please connect Scatter',
         type: 'info'
       })
 
@@ -114,7 +110,7 @@ export default {
             this.fetchOrders()
 
             // this.$router.push({ name: 'index' })
-            // this.$notify({ title: 'Success', message: `You fill ${id} order`, type: 'success' })
+            // this.$notify({ title: 'Success', message: `You filled ${id} order`, type: 'success' })
           }
         })
       } catch (e) {
@@ -129,7 +125,7 @@ export default {
     async buy() {
       if (!this.$store.state.chain.scatterConnected) return this.$notify({
         title: 'Authorization',
-        message: 'Pleace connect Scatter',
+        message: 'Please connect Scatter',
         type: 'info'
       })
 
@@ -156,7 +152,7 @@ export default {
           callback: (action) => {
             this.fetchOrders()
             // this.$router.push({ name: 'index' })
-            // this.$notify({ title: 'Success', message: `You fill ${id} order`, type: 'success' })
+            // this.$notify({ title: 'Success', message: `You filled ${id} order`, type: 'success' })
           }
         })
       } catch (e) {

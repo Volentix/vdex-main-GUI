@@ -18,7 +18,7 @@
         el-slider(:step="25" show-stops :marks="{0: '0%', 25: '25%', 50: '50%', 75: '75%', 100: '100%'}")
 
       el-form-item.mt-5
-        // TODO разработать компонент которой чекает залогинен ли
+      
         el-button(type="success" @click="buy").w-100 Buy {{ market.token.str }}
 
   .col
@@ -39,12 +39,12 @@
         el-slider(:step="25" show-stops :marks="{0: '0%', 25: '25%', 50: '50%', 75: '75%', 100: '100%'}")
 
       el-form-item.mt-5
-        // TODO разработать компонент которой чекает залогинен ли
+        
         el-button(type="danger" @click="sell").w-100 Sell {{ market.token.str }}
 </template>
 
 <script>
-// TODO Короче еще сделать для маркеттрейда размер в EOS сумировать по ордерам
+
 import { captureException } from '@sentry/browser'
 import { mapGetters } from 'vuex'
 import { transfer } from '~/store/chain.js'
@@ -90,7 +90,7 @@ export default {
     async buy() {
       if (!this.$store.state.chain.scatterConnected) return this.$notify({
         title: 'Authorization',
-        message: 'Pleace connect Scatter',
+        message: 'Please connect Scatter',
         type: 'info'
       })
 
@@ -113,7 +113,7 @@ export default {
           confirmButtonText: 'OK',
           callback: (action) => {
             this.$emit('update')
-            // this.$notify({ title: 'Success', message: `You fill ${id} order`, type: 'success' })
+            // this.$notify({ title: 'Success', message: `You filled ${id} order`, type: 'success' })
           }
         })
       } catch (e) {
@@ -128,7 +128,7 @@ export default {
     async sell() {
       if (!this.$store.state.chain.scatterConnected) return this.$notify({
         title: 'Authorization',
-        message: 'Pleace connect Scatter',
+        message: 'Please connect Scatter',
         type: 'info'
       })
 

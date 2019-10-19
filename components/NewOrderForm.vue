@@ -1,11 +1,11 @@
 <template lang="pug">
-// TODO Refactor with walidators for form
+// TODO Refactor with validators for form
 div
   el-button(size="medium" type="primary" @click="open").ml-auto
     span
       slot
 
-  el-dialog(v-if="user" title="Open new market or create new order for exists market", :visible.sync="visible" width="50%")
+  el-dialog(v-if="user" title="Open new market or create new order for existing market", :visible.sync="visible" width="50%")
     el-form(ref="form" :model="form" label-position="left" :rules="rules").mt-2
       // TODO Bit symbol and amount here
       h1.leader Sell
@@ -41,7 +41,7 @@ div
 
           .lead.mt-2 Price: {{ price }}
 
-        el-alert(title="Amounts does't match unit price!", v-show="wrongPrice" type='info', show-icon :closable="false").mb-2
+        el-alert(title="Amount does not match unit price!", v-show="wrongPrice" type='info', show-icon :closable="false").mb-2
           | Please change price or amount.
           a(href="#", @click="unitPriceInfo").ml-1  WTF ?
 
@@ -218,7 +218,7 @@ export default {
       form.sell.quantity = `${form.sell.amount.toFixed(form.sell.precision)} ${form.sell.symbol}`
       form.buy.quantity = `${form.buy.amount.toFixed(4)} EOS@eosio.token`
 
-      this.$confirm(`Are you sure to sell ${form.sell.quantity} for ${form.buy.quantity}`, 'Sell', {
+      this.$confirm(`Are you sure you want to sell ${form.sell.quantity} for ${form.buy.quantity}`, 'Sell', {
         confirmButtonText: 'Sell',
         cancelButtonText: 'Cancel',
         type: 'warning'

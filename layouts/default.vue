@@ -7,20 +7,20 @@
           gh-btns-star(slug="volentix/vdex-main-GUI" show-count)
 
           el-tooltip(content="Join us on Telegram!" placement="top" effect="light")
-            a(href="//https://t.me/Volentix" target="_blank")
+            a(href="https://t.me/Volentix" target="_blank")
               img(src="/telegram.png" height="40").ml-2
   .row
     .col-lg.m-auto
       .d-flex
-        //nuxt-link(tag="span" :to="{name: 'index'}" style="cursor: pointer;") VDEX Swap:
+        //nuxt-link(tag="span" :to="{name: 'index'}" style="cursor: pointer;") EOS Swap:
         nuxt-link(tag="span" :to="{name: 'index'}" style="cursor: pointer;")
           h1.display-3 {{ app_name }}
           img(src="~/assets/logo.png").logo
-          //img(src="https://fontmeme.com/temporary/3e87c21c0d621c68d8bce26dc94429af.png").logo
+          
 
 
         h1.align-self-center.ml-5.lead.mt-2
-          span Volentix decentralized exchange.
+          span EOS decentralized exchange.
 
         .d-flex.align-items-center.span.ml-auto.pr-3.pt-3
           span(v-if="user")
@@ -28,7 +28,7 @@
             el-button(v-if="user" size="small" type="info" plain @click="logout").ml-3 logout
 
           el-button(@click="login" type="primary" size="medium" v-if="!user").ml-auto Sign In via Scatter
-          // TODO Кнопка с тестком как ссылка на профиль Button with a dash as a link to a profile
+          
 
       el-alert(title="Scatter is not connected:" :closable="false" show-icon type="info" v-if="!$store.state.chain.scatterConnected").mt-2
         span.ml-1 Unlock or install
@@ -41,7 +41,7 @@
         a(href="https://get-scatter.com/" target="_blank")  Update Scatter
 
       el-alert(title="Node is not connected:" :closable="false"  show-icon type="error" v-if="netError").mt-2
-        span.ml-1 Network is unreacheble pleace check your internet connection.
+        span.ml-1 Network is unreacheble please check your internet connection.
 
       nuxt
 
@@ -49,7 +49,7 @@
         .col.text-mutted
           small
             span.text-muted App version:
-              a(href="https://github.com/volentix/vdex-main-GUI" target="_blank").text-secondary {{ lastCommit.sha }}
+              a(href="https://github.com/Volentix/vDexNode-GUI" target="_blank").text-secondary {{ lastCommit.sha }}
                 span(v-if="lastCommit.commit") ({{ lastCommit.commit.message }})
 
   footer
@@ -57,7 +57,7 @@
       .col.d-flex
         span.ml-auto Created by
           b
-            a(href="https://volentix.io" target="_blank")  #Volentix
+            a(href="https://volentix.io" target="_blank") 
 </template>
 
 <script>
@@ -114,7 +114,7 @@ export default {
           loading.close()
         }
       } else {
-        this.$notify({ title: 'Scatter not found', message: 'Pleace install or unlock Scatter', type: 'info' })
+        this.$notify({ title: 'Scatter not found', message: 'Please install or unlock Scatter', type: 'info' })
       }
     },
 
@@ -130,7 +130,7 @@ export default {
     },
 
     async getVersion() {
-      this.lastCommit = (await axios.get('https://github.com/Volentix/vdex-main-GUI/commits/master')).data
+      this.lastCommit = (await axios.get('https://api.github.com/repos/volentix/vdex-main-GUI/commits/master')).data
     }
   }
 }

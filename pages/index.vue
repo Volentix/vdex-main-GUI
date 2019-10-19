@@ -60,20 +60,20 @@ div
       h4.ml-3 Audit:
         ul.mt-1
           li.lead Exchange contract:
-            a(:href="'VDEX' | monitorAccount" target="_blank") vdexmainbook
+            a(:href="'eosdex' | monitorAccount" target="_blank") wwweosswapio
 
           //li.lead Comission account:
             a(:href="'eosswapdivs1' | monitorAccount" target="_blank") eosswapdivs1
 
-    //- el-tab-pane(label='Partners').p-3
-    //-   .lead.mb-4 Friends and partners of the project. By any collaborations you can send your suggestions to telegram chat!
+    el-tab-pane(label='Partners').p-3
+      .lead.mb-4 Friends and partners of the project. By any collaborations you can send your suggestions to telegram chat!
 
-    //-   hr
-    //-   .d-flex
-    //-     a(href="https://eosnameswaps.com" target="_blank").btn
-    //-       .d-flex.align-items-center.span
-    //-         img(src="https://www.eosnameswaps.com/images/ens_logo.jpg" height="80").mr-3
-    //-         .lead A decentralized EOS account exchange.
+      hr
+      .d-flex
+        a(href="https://eosnameswaps.com" target="_blank").btn
+          .d-flex.align-items-center.span
+            img(src="https://www.eosnameswaps.com/images/ens_logo.jpg" height="80").mr-3
+            .lead A decentralized EOS account exchange.
 
 
 

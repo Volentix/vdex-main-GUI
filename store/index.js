@@ -14,7 +14,7 @@ export const mutations = {
 export const actions = {
   loadUserBalances({ rootState, state, commit }) {
     if (state.user) {
-      // TODO Вынести этот эндпоинт в конфиг
+      
       axios.get(`${config.lightapi}/api/account/${config.name}/${rootState.user.name}`).then((r) => {
         const balances = r.data.balances
         balances.sort((a, b) => {

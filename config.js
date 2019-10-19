@@ -9,7 +9,7 @@ const networks = {
     host: 'http://localhost:8888',
     port: 8888,
     protocol: 'http',
-    monitor: 'https://eos.eosx.io',
+    monitor: 'https://jungle.eosx.io',
     lightapi: 'https://lightapi.eosgeneva.io'
   },
 
@@ -44,5 +44,5 @@ export default {
   PRICE_SCALE,
   PRICE_DIGITS: PRICE_SCALE.toString().length - 1,
 
-  ...networks[process.env.NETWORK] 
+  ...networks[process.env.NETWORK] || networks.local
 }
