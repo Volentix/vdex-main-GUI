@@ -1,29 +1,18 @@
 FROM node:12
 
-# create destination directory
-RUN mkdir /app
 WORKDIR /app
+COPY package*.json ./
+RUN yarn global add @quasar/cli
+COPY . .
 
-# update and install dependency
-#RUN apk update && apk upgrade
-#RUN apk add git
-
-# copy the app, note .dockerignore
-COPY . /app/
-RUN yarn install
-
-# build necessary, even if no static files are needed,
-# since it builds the server as well
-ENV NETWORK=eos
-RUN yarn build
-
+RUN yarn
 # expose 5000 on container
-EXPOSE 7000
+EXPOSE 8080
 
 # set app serving to permissive / assigned
-ENV NUXT_HOST=0.0.0.0
+#ENV NUXT_HOST=0.0.0.0
 # set app port
-ENV NUXT_PORT=7000
+#ENV NUXT_PORT=8080
 
 # start the app
-CMD [ "yarn", "start" ]
+CMD HOST=0.0.0.0 NETWORK=jungle yarn run dev

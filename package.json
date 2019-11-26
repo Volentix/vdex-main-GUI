@@ -1,48 +1,55 @@
 {
-  "name": "VDEX",
-  "version": "1.0.0",
-  "description": "Volentix exchange",
-  "author": "Volentix",
+  "name": "dashboard",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Quasar App",
+  "cordovaId": "org.cordova.quasar.app",
+  "capacitorId": "",
+  "author": "Vladislav <dsfcoll@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "devmainnet": "nuxt --mainnet",
-    "build": "nuxt build",
-    "build-mainnet": "nuxt build --spa --mainnet",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "lint": "eslint --ext .js,.vue src",
+    "dev": "quasar dev",
+    "build": "quasar build"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
-    "@nuxtjs/sentry": "^2.3.1",
-    "@scatterjs/core": "^2.7.44",
-    "@scatterjs/eosjs2": "^1.5.26",
-    "axios": "^0.19.0",
-    "axios-cache-adapter": "^2.3.3",
-    "big.js": "^5.2.2",
-    "bootstrap": "^4.3.1",
-    "bootstrap-utilities": "^4.1.3",
-    "cross-env": "^5.2.0",
-    "element-ui": "^2.11.1",
+    "@quasar/extras": "^1.0.0",
+    "@scatterjs/core": "^2.7.47",
+    "@scatterjs/eosjs2": "^1.5.29",
+    "@vue/babel-preset-jsx": "^1.1.1",
+    "axios": "^0.18.1",
+    "axios-retry": "^3.1.2",
+    "chart.js": "^2.9.0",
     "eosjs": "20.0.0",
-    "esm": "^3.2.25",
-    "js-yaml": "^3.13.1",
-    "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
-    "nuxt": "^2.0.0",
-    "vue-github-buttons": "^3.1.0",
-    "webpack-bundle-analyzer": "^3.3.2"
+    "quasar": "^1.0.0",
+    "trading-vue-js": "^0.4.1",
+    "v-money": "^0.8.1",
+    "vue-chartjs": "^3.4.2",
+    "vue-i18n": "^8.0.0",
+    "vue-js-modal": "^1.3.31",
+    "vue-moment": "^4.0.0",
+    "vue-numeric": "^2.3.0",
+    "vue-numeric-input": "^1.0.5",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^1.0.0",
+    "@quasar/app": "^1.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "nodemon": "^1.11.0",
-    "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0"
-  }
+    "eslint": "^5.10.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "vue-functional-data-merge": "^3.1.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
 }

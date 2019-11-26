@@ -1,0 +1,38 @@
+// app global css in SCSS form
+
+html, body {
+  font-size: 14px;
+  background-color: #000;
+  color: $light-grey;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.modal-show {
+  filter: blur(5px);
+}
+
+.container {
+  margin: $gap;
+}
+
+.q-btn-dropdown--dark {
+  background-color: $primary-light;
+}
+
+.q-btn-dark {
+  background-color: $primary-dark;
+  color: $neutral;
+}
+
+.q-btn-border-accent-1 {
+  border-style: solid;
+  border-width: .15em;
+  border-color: $accent-1;
+  background: $accent-1;
+}
+
+.q-btn-border-accent-2 {
+  @extend .q-btn-border-accent-1;
+  border-color: $accent-2;
+  background: $accent-2;
+}
